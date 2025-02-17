@@ -39,7 +39,13 @@ class Post:
         pass
 
     def display_header(self):
-        pass
+        Font = pygame.font.SysFont('ttf.chalkduster',UI_FONT_SIZE)
+        User_Name = Font.render(self.username)
+        screen.blits(User_Name, USER_NAME_X_POS,USER_NAME_Y_POS)
+        location = Font.render(self.location)
+        screen.blits(location,LOCATION_TEXT_X_POS,LOCATION_TEXT_Y_POS)
+        likes = Font.render(self.likes_counter)
+        screen.blits(likes,LIKE_TEXT_X_POS,LIKE_TEXT_Y_POS)
 
     def display_likes(self):
         self.likes_counter += 1
