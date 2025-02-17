@@ -1,5 +1,5 @@
-import constants
-from helpers import from_text_to_array
+from constants import *
+from helpers import from_text_to_array,screen
 class Comment:
     Text: str
 
@@ -16,7 +16,9 @@ class Comment:
             if i % 24 == 0 or i == len(self.Text) - 1:
                 Text_seperated.append(s)
                 s = ""
-        not_sure = 24
+        not_sure = 0
         for comment in Text_seperated:
-            text_font = Font.re
+            text_font = Font.render(comment,UI_FONT_SIZE)
+            screen.blits(text_font,FIRST_COMMENT_X_POS,FIRST_COMMENT_Y_POS + 0)
+            not_sure += UI_FONT_SIZE
 

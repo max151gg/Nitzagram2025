@@ -1,6 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+import Comment
 
 
 def main():
@@ -20,7 +21,11 @@ def main():
     # TODO: add a post here
 
     running = True
+    test = Comment("blabla")
+
+
     while running:
+
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
         for event in pygame.event.get():

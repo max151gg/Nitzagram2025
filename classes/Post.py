@@ -47,8 +47,12 @@ class Post:
         likes = Font.render(self.likes_counter)
         screen.blits(likes,LIKE_TEXT_X_POS,LIKE_TEXT_Y_POS)
 
-    def display_likes(self):
+
+    def Add_Like(self):
         self.likes_counter += 1
+    def display_likes(self):
+        Like_text = Font.render(self.likes_counter)
+        screen.blits()
 
     def display_comments(self):
         """
