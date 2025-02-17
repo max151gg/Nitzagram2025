@@ -74,7 +74,7 @@ BLACK = (0, 0, 0)
 GREY = (50, 50, 50)
 WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
-Font = pygame.font.SysFont('Arial',UI_FONT_SIZE)
+Font = pygame.font.SysFont('Tahoma',UI_FONT_SIZE)
 
 
 

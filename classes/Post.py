@@ -40,19 +40,18 @@ class Post:
 
     def display_header(self):
         Font = pygame.font.SysFont('ttf.chalkduster',UI_FONT_SIZE)
-        User_Name = Font.render(self.username)
+        User_Name = Font.render(self.username,True,(0,0,0))
         screen.blits(User_Name, USER_NAME_X_POS,USER_NAME_Y_POS)
-        location = Font.render(self.location)
+        location = Font.render(self.location,True,(0,0,0))
         screen.blits(location,LOCATION_TEXT_X_POS,LOCATION_TEXT_Y_POS)
-        likes = Font.render(self.likes_counter)
-        screen.blits(likes,LIKE_TEXT_X_POS,LIKE_TEXT_Y_POS)
+
 
 
     def Add_Like(self):
         self.likes_counter += 1
     def display_likes(self):
-        Like_text = Font.render(self.likes_counter)
-        screen.blits()
+        likes = Font.render(self.likes_counter,True,(0,0,0))
+        screen.blits(likes, LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS)
 
     def display_comments(self):
         """
