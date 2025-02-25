@@ -1,6 +1,6 @@
 # Width and Height of the project window
-import pygame.font
-
+import pygame
+pygame.init()
 WINDOW_WIDTH = 360
 WINDOW_HEIGHT = 720
 
@@ -74,7 +74,7 @@ BLACK = (0, 0, 0)
 GREY = (50, 50, 50)
 WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
-Font = pygame.font.SysFont('Tahoma',UI_FONT_SIZE)
 
+Font = pygame.font.SysFont("Chalkduster.ttf",UI_FONT_SIZE)
 
 
