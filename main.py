@@ -1,7 +1,7 @@
-import pygame
+import helpers
 from helpers import screen
 from constants import *
-from Comment import Comment
+from classes.Comment import Comment
 from ImagePost import ImagePost
 
 def main():
@@ -25,9 +25,11 @@ def main():
     test.display(1)
 
 
+
     while running:
         Post1 = ImagePost("blabla","nig","NMone",r"Images\noa_kirel.jpg")
         Post1.display()
+        Post1.add_cooment(test)
         mouse_x,mouse_y = pygame.mouse.get_pos()
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -38,7 +40,7 @@ def main():
                     mouse_x < POST_X_POS + POST_WIDTH and mouse_y < POST_Y_POS \
                     and mouse_y < POST_Y_POS + POST_HEIGHT :
                 pass
-
+        # helpers.read_comment_from_user()
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         Ofek_Shani_choen = Comment("I am dying on you!!!!!!!!!!!")
@@ -51,6 +53,7 @@ def main():
 
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        Post1.display()
 
         # Update display - without input update everything
         pygame.display.update()
@@ -60,5 +63,5 @@ def main():
     pygame.quit()
     quit()
 
-
-main()
+if __name__ == '__main__':
+    main()

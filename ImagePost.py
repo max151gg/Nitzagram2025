@@ -12,4 +12,6 @@ class ImagePost(Post):
 
     def display(self):
         super().display()
-        screen.blit(self.Image, (POST_X_POS,POST_Y_POS))
+        # screen.blit(self.Image, (POST_X_POS,POST_Y_POS))
+    def display_content(self):
+        screen.blit(self.Image,(POST_X_POS,POST_Y_POS))

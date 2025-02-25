@@ -56,6 +56,8 @@ class Post:
         likes = Font.render(str(self.likes_counter),True,(0,0,0))
         screen.blit(likes, (LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS))
 
+    def add_cooment(self,comment):
+        self.comments.append(comment)
     def display_comments(self):
         """
         Display comments on post. In case there are more than 4
