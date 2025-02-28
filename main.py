@@ -40,7 +40,7 @@ def main():
              ImagePost("Blade", "Max apartment", "I am starting my own business", "Images/02ef4b2047d0fbd8.png"),\
              TextPost("Blade","Max apartment","I got a job!!!!!!!!!!!","Max where are you???? I ran out of food",(0,0,255),(0,255,0)),\
              ImagePost("Blade", "Max apartment", "Me at my prime", "Images/image0.jpg"),\
-             ImagePost("OFEK", "PARSHKOVSKI", "The wonders if Nature", "Images/250px-Copulating_flies.png",filter = Filter((245, 194, 10),80))]
+             ImagePost("OFEK", "PARSHKOVSKI", "The wonders if Nature, With filter.", "Images/250px-Copulating_flies.png",filter = Filter((245, 194, 10),80))]
     Post1 = ImagePost("blabla", "nig", "NMone", r"Images\noa_kirel.jpg")
     while running:
 
