@@ -3,6 +3,7 @@ from helpers import from_text_to_array,screen
 class Comment:
     Text: str
 
+
     def __init__(self,Text):
         self.Text = Text
 
@@ -10,7 +11,7 @@ class Comment:
     def display(self,i):
         Font = pygame.font.SysFont("chalkduster.tff",UI_FONT_SIZE)
         text = Font.render(self.Text,True,(0,0,0))
-        screen.blit(text,(FIRST_COMMENT_X_POS,FIRST_COMMENT_Y_POS + i * COMMENT_TEXT_SIZE))
+        screen.blit(text,(FIRST_COMMENT_X_POS,FIRST_COMMENT_Y_POS + i * COMMENT_LINE_HEIGHT))
         # s = ""
         # Text_seperated = []
         # for i in range(0,len(self.Text)):

@@ -47,6 +47,8 @@ class Post:
         screen.blit(User_Name, (USER_NAME_X_POS,USER_NAME_Y_POS))
         location = Font.render(self.location,True,(0,0,0))
         screen.blit(location,(LOCATION_TEXT_X_POS,LOCATION_TEXT_Y_POS))
+        description  = Font.render(self.description,True,(0,0,0))
+        screen.blit(description,(DESCRIPTION_TEXT_X_POS,DESCRIPTION_TEXT_Y_POS))
 
 
 
