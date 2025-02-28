@@ -5,6 +5,7 @@ from helpers import screen,mouse_in_button,draw_comment_text_box,read_comment_fr
 from constants import *
 from classes.Comment import Comment
 from ImagePost import ImagePost
+from TextPost import TextPost
 from buttons import *
 def main():
     # Set up the game display, clock and headline
@@ -33,7 +34,9 @@ def main():
              ImagePost("Blade", "Max apartment", "I am going to vacation wish me luck:)", "Images/20230918_172648.jpg"), \
              ImagePost("Blade", "Max apartment", "Why is max father so hot?????",
                        "Images/rn_image_picker_lib_temp_b2cedd25-01d7-4544-99d7-751480f4eb3b.jpg"), \
-             ImagePost("Blade", "Max apartment", "I am starting my own business", "Images/02ef4b2047d0fbd8.png")]
+             ImagePost("Blade", "Max apartment", "I am starting my own business", "Images/02ef4b2047d0fbd8.png"),\
+             TextPost("Blade","Max apartment","I got a job!!!!!!!!!!!","Max where are you???? I ran out of food",(0,0,255),(0,255,0)),\
+             ImagePost("Blade", "Max apartment", "Me at my prime", "Images/image0.jpg")]
     Post1 = ImagePost("blabla", "nig", "NMone", r"Images\noa_kirel.jpg")
     while running:
         first_comment = 0
@@ -46,8 +49,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if mouse_in_button(click_post_button,(poses)):
+            if event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEWHEEL:
+                # if mouse_in_button(click_post_button,(poses)) and event.type == pygame.MOUSEWHEEL and event.y  == -1:
+                #     if POST_INDEX == 0 :
+                #         POST_INDEX = len(POSTS) -1
+                #     POST_INDEX -= 1
+                if mouse_in_button(click_post_button,(poses)) :
                     if POST_INDEX == len(POSTS) -1 :
                         POST_INDEX = 0
                     POST_INDEX += 1

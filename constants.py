@@ -76,5 +76,7 @@ WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
 
 Font = pygame.font.SysFont("Chalkduster.ttf",UI_FONT_SIZE)
+Font_Text_post = pygame.font.SysFont("Chalkduster.ttf",TEXT_POST_FONT_SIZE)
+Font_Comment_Text = pygame.font.SysFont("Chalkduster.ttf",COMMENT_TEXT_SIZE)
 
 
