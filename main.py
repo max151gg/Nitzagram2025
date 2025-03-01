@@ -1,15 +1,21 @@
 import pygame.mouse
-from Heart import Heart
-import helpers
+from classes.Heart import Heart
 from helpers import screen,mouse_in_button,draw_comment_text_box,read_comment_from_user
-from constants import *
 from classes.Comment import Comment
-from ImagePost import ImagePost
-from TextPost import TextPost
+from classes.ImagePost import ImagePost
+from classes.TextPost import TextPost
 from buttons import *
 import random
-from Filter import Filter
+from classes.Filter import Filter
+# import pywhatkit
+
+
+def censor(comment_text,word_list):
+    for word in word_list:
+        comment_text = comment_text.replace(word, len(word) * "*")
+    return comment_text
 def main():
+    BAD_WORDS = ["I LOVE TAYLOR SWIFT", "NIGGER","KKK","The third Raich"]
     # Set up the game display, clock and headline
     pygame.init()
 
@@ -34,13 +40,13 @@ def main():
     POSTS = [ImagePost("Blade", "Max apartment", "BOOO", "Images/20230918_172609.jpg"), \
              ImagePost("Blade", "Max apartment", "MAX AND I ARE CHILLING", "Images/20230918_172624.jpg"), \
              ImagePost("Blade", "Max apartment", "Max is starving me to death:(", "Images/20230918_172632.jpg"), \
-             ImagePost("Blade", "Max apartment", "I am going to vacation wish me luck:)", "Images/20230918_172648.jpg"), \
+             ImagePost("Blade", "Max apartment", "I am going on vacation wish me luck:)", "Images/20230918_172648.jpg"), \
              ImagePost("Blade", "Max apartment", "Why is max father so hot?????",
                        "Images/rn_image_picker_lib_temp_b2cedd25-01d7-4544-99d7-751480f4eb3b.jpg"), \
              ImagePost("Blade", "Max apartment", "I am starting my own business", "Images/02ef4b2047d0fbd8.png"),\
              TextPost("Blade","Max apartment","I got a job!!!!!!!!!!!","Max where are you???? I ran out of food",(0,0,255),(0,255,0)),\
-             ImagePost("Blade", "Max apartment", "Me at my prime", "Images/image0.jpg"),\
-             ImagePost("OFEK", "PARSHKOVSKI", "The wonders if Nature, With filter.", "Images/250px-Copulating_flies.png",filter = Filter((245, 194, 10),80))]
+             ImagePost("Blade", "Max old apartment", "Me at my prime", "Images/image0.jpg"),\
+             ImagePost("OFEK", "PARSHKOVSKI", "The wonders of Nature, With filter.", "Images/250px-Copulating_flies.png",filter = Filter((245, 194, 10),80))]
     Post1 = ImagePost("blabla", "nig", "NMone", r"Images\noa_kirel.jpg")
     while running:
 
@@ -70,7 +76,7 @@ def main():
 
                 if mouse_in_button(comment_button,poses):
                     draw_comment_text_box()
-                    new_comment = read_comment_from_user()
+                    new_comment = censor(read_comment_from_user(),BAD_WORDS)
                     new_comment = Comment(new_comment)
                     POSTS[POST_INDEX].add_cooment(new_comment)
                 if mouse_in_button(view_more_comments_button,poses) :
@@ -78,6 +84,14 @@ def main():
                         POSTS[POST_INDEX].comments_display_index = 4
                     else:
                         POSTS[POST_INDEX].comments_display_index += 4
+                if mouse_in_button(share_button,poses):
+                    draw_comment_text_box()
+                    phone_number = "972+" + read_comment_from_user()
+                    try:
+                        POSTS[POST_INDEX].share(phone_number)
+                    except Exception as e:
+                        print(str(e))
+                        print("Sending message failed.")
 
 
 

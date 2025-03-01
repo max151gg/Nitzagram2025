@@ -2,7 +2,7 @@ import pygame
 
 from constants import *
 from helpers import screen
-
+# import pywhatkit
 # Font = pygame.font.SysFont('Comic Sans MS',UI_FONT_SIZE)
 
 class Post:

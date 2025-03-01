@@ -1,8 +1,9 @@
-import fontTools.ttLib
-import pygame
+import pywhatkit
+
 from helpers import  *
 from constants import *
-from Post import Post
+from classes.Post import Post
+# import pywhatkit
 class TextPost(Post):
     background_color: tuple
     text: str
@@ -30,3 +31,5 @@ class TextPost(Post):
 
             screen.blit(Text,pos)
 
+    def share(self,Phone_number):
+        pywhatkit.sendwhatmsg_instantly(Phone_number,self.text)

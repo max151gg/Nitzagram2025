@@ -5,10 +5,10 @@ from helpers import *
 
 
 class Heart:
-    Heart_Size:int
+    Heart_Size: int
 
 
-    def __init__(self,x_pos,y_pos = WINDOW_HEIGHT , Heart_Size = 30,Heart_speed = 20) ->None:
+    def __init__(self,x_pos,y_pos = WINDOW_HEIGHT , Heart_Size = 30,Heart_speed = 10) ->None:
         self.x_pos = x_pos
         self.y_pos = WINDOW_HEIGHT
         self.Heart_Size = Heart_Size
